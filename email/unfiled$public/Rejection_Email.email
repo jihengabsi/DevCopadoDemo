@@ -1,0 +1,9 @@
+Hello {!Candidate__c.First_Name__c} {!Candidate__c.Name}, 
+
+You recently applied for our job offer
+
+After carefully studying your profile, we regret to inform you that we will not be continuing the recruitment process this time.
+
+We hope that you will find the job you want very quickly.
+
+Good luck for the future and have a nice day.

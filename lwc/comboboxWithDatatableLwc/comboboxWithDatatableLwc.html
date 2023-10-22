@@ -1,0 +1,98 @@
+<template>
+
+  <lightning-layout>
+    <lightning-layout-item flexibility="auto" padding="around-small" >
+
+        <div class="slds-p-horizontal_small ">
+            <div   style="height: 400px;"> 
+   
+          <lightning-card >
+          <div class="slds-card__body slds-card__body_inner">
+                       <lightning-combobox
+                      label='Available Recruitment Campaigns'
+                        value={value}
+                      placeholder='Select a recruitment campaign'
+                      options={options}
+                      onchange={handleChangedValue}
+              >
+                  </lightning-combobox>
+          <div>
+     
+         <lightning-checkbox-group name="CheckboxLevel Group"
+         label="Educational level"
+        options={optionsCheck}
+        value={valueoption}
+         onchange={handleChange}>
+        </lightning-checkbox-group>
+     <lightning-checkbox-group name="Checkbox Group"
+      label="Type of diploma"
+      options={optionsTypeCheck}
+      value={valueTypeoption}
+      onchange={handleTypeChange}>
+       </lightning-checkbox-group>
+    
+      <lightning-slider label="Seniority"  max=25 value={sliderValue} onchange={handleSliderChange}></lightning-slider>
+      <lightning-button variant='neutral' label='Search' title='Search' onclick={handleOnClick} class='cssClass'>
+      </lightning-button>
+      </div>      
+    </div>
+    </lightning-card>
+    </div>
+    </div>
+
+    </lightning-layout-item>
+
+
+
+
+    <lightning-layout-item flexibility="auto" >
+      
+      <template if:false={cardVisible}>
+        <div class="slds-p-around_medium">
+        <lightning-card title="All candidates">
+          <div style="height: auto;">
+            <lightning-datatable
+                key-field='id'
+                data={alldata}
+                columns={columns}
+            ></lightning-datatable>
+          </div>
+        </lightning-card>
+        </div>
+        <div class="slds-float_right slds-size_1-of-1">
+          <template if:true={totalCandidates}>
+              <c-pagination totalrecords={totalCandidates} page-size={pageSize} onpagination={handlePagination}></c-pagination>
+          </template>
+      </div>
+        </template>
+       <template if:true={cardVisible}>
+        <lightning-card >
+          <div style="height: 400px;">
+            <lightning-datatable
+                key-field='id'
+                data={data}
+                columns={columns}
+            ></lightning-datatable>
+          </div>
+        </lightning-card>
+        <lightning-card title="Late submitted candidates" >
+            <div style="height: 200px;">
+              <lightning-datatable
+                  key-field='id'
+                  data={latedata}
+                  columns={columnsLate}
+              ></lightning-datatable>
+            </div>
+          </lightning-card>
+          
+    </template>
+
+    </lightning-layout-item>
+
+  </lightning-layout>
+   
+  
+  
+</template>
+<!-- 
+hide-checkbox-column -->

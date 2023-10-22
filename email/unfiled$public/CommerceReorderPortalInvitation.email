@@ -1,0 +1,11 @@
+<html>
+            Bonjour {!Receiving_User.FirstName},
+            <p>
+            Visitez ce portail pour faciliter le renouvellement des commandes de {!Organization.Name}. Vous pouvez afficher vos commandes passées, modifier les quantités, passer de nouvelles commandes et consulter les statuts de commande.
+            </p>
+            <p>
+            Cliquez sur ce lien pour accéder au portail : <a href={!Community_URL}>{!Community_Name}</a>
+            </p>            
+            Cordialement,<br>
+            {!Sending_User.Name}
+            </html>

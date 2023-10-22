@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="Upload your CV" icon-name="standard:file">
+      <div class="slds-p-horizontal_small">
+        <lightning-file-upload
+          label="Attach files"
+          record-id={recordId}
+          accept={acceptedFormats}
+          class="file-selector-large"
+          file-field-name="Guest_Record_fileupload__c"
+          file-field-value="codedddd"
+          onuploadfinished={handleUploadFinished}
+        >
+        </lightning-file-upload>
+      </div>
+    </lightning-card>
+  </template>
