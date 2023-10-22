@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Invite un contact dans un portail de renouvellement de commande.</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Portail de renouvellement de commande : invitation</name>
+    <style>none</style>
+    <subject>Bienvenue dans {!Community_Name}</subject>
+    <textOnly>&lt;html&gt;
+            Bonjour {!Receiving_User.FirstName},
+            &lt;p&gt;
+            Visitez ce portail pour faciliter le renouvellement des commandes de {!Organization.Name}. Vous pouvez afficher vos commandes passées, modifier les quantités, passer de nouvelles commandes et consulter les statuts de commande.
+            &lt;/p&gt;
+            &lt;p&gt;
+            Cliquez sur ce lien pour accéder au portail : &lt;a href={!Community_URL}&gt;{!Community_Name}&lt;/a&gt;
+            &lt;/p&gt;            
+            Cordialement,&lt;br&gt;
+            {!Sending_User.Name}
+            &lt;/html&gt;</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>
